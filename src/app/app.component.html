@@ -1,0 +1,20 @@
+<ion-app>
+  <ion-menu  contentId="main-content" type="overlay" class="d-lg-none">
+
+    <ion-header color="dark">
+    </ion-header>
+
+    <ion-content color="dark">
+      <ion-item *ngFor="let p of mobile_menu"
+        (click)="presentPopover($event,p.number,p.title)"
+          [routerLink]="p.router"
+        color="medium">
+        <ion-icon [name]="p.icon" color="dark" slot="start"></ion-icon>
+        <ion-label class="text-light">{{p.title}}</ion-label>
+        <ion-icon [name]="p.licon"></ion-icon>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

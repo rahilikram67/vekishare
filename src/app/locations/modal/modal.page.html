@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar [hidden]="!top_down_btn">
+    <ion-item class="float-right" lines="none">
+      <ion-button size="default" fill="solid" (click)="modal.dismiss()" 
+          expand="block" color="light"
+        class="mx-auto">
+        <ion-icon name="close-outline" color="dark"></ion-icon>
+        Close
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="box-shadow: none !important;">
+    <ion-card-header>
+
+    </ion-card-header>
+    <ion-card-content>
+      <div class="bg-white h-50 mx-auto">
+        <img src="assets/ezgif.gif" class="img rounded border-light col-md-8 offset-md-2">
+        <h1 class="text-left text-dark mt-2">Click</h1>
+        <div class="bg-info text-white rounded" style="height:max-content">
+          <p class="lead text-justify ml-2">Double-Click on flag on map,</p>
+          <p class="lead text-justify ml-2">and Click on detail</p>
+        </div>
+        <ion-item lines="none" [hidden]="top_down_btn">
+          <ion-button size="default" fill="solid" expand="block" color="light" 
+              class="mx-auto" (click)="modal.dismiss()">
+            <ion-icon name="close-outline" color="dark"></ion-icon>
+            Close
+          </ion-button>
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+</ion-content>

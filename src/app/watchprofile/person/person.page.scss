@@ -1,0 +1,36 @@
+.avatar{
+    height: 8rem;
+    width: 8rem;
+}
+.circle{
+    height: 6rem;
+    width:6rem;
+    background-color: darkblue;
+    color: lightyellow;
+    border-radius:50%;
+    font-size: 3.4rem;
+}
+ion-row{
+    align-items: center;
+}
+.value{
+    margin-right: auto;
+}
+.index{
+    border-radius:20px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+} 
+#map{
+    height: 35%;
+    width: 100%;
+    background-color: blue;
+}
+
+#info-circle:hover{
+    cursor: pointer;
+    background-color: aqua;
+    border-radius: 15px;
+}

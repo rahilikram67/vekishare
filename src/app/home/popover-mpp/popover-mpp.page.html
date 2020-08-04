@@ -1,0 +1,106 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content style="background-color:azure;" class="border">
+
+
+  <div class="bg-dark mx-auto mt-2" style="border-radius:50%;width: 10px;height:10px;"></div>
+  
+
+  <ion-slides #slides (ionSlidesDidLoad)="slidesLoaded(slides)" [options]="slider">
+    <!--slide 1-->
+    <ion-slide class="d-block">
+      
+          <ion-select interface="popover" value="passenger" #select  class="mx-1 border border-dark" mode="ios" style="border-radius: 20px;">
+                <ion-select-option value="passenger">Passenger</ion-select-option>
+                <ion-select-option value="driver">Driver</ion-select-option>
+          </ion-select>
+      
+      <input #phone type="text" class="mt-3 form-control text-center my-1 mx-auto d-block" placeholder="+00000000000">
+
+      <div class="text-center text-danger">{{err.phone_err}}</div>
+
+      <input #pass type="password" class="form-control text-center mx-auto my-1 d-block" placeholder="Password">
+
+      <div class="text-center text-danger">{{err.pass_err}}</div>
+      <ion-item class="mx-auto" lines="none" style="background-color:azure;">
+        <ion-button class="mx-auto" size="default" (click)="submit(phone.value,pass.value,select.value)">Submit</ion-button>
+      </ion-item>
+
+
+      <a slot="end" [routerLink]="undefined" class="text-info h6 float-right" (click)="next()">
+        Forgot?
+      </a>
+
+    </ion-slide>
+    <!--slide 2-->
+    <ion-slide class="d-block">
+      <ion-spinner [hidden]="hide_spin" style="height: 3rem;"></ion-spinner>
+
+      <div id="recaptcha-container" [class]="hide_recap"></div>
+
+      <div class="text-center h6 text-danger">{{recap}}</div>
+      
+      <ion-select value="passenger" #selector  class="mx-1 border border-dark" mode="md" style="border-radius: 20px;">
+             <ion-select-option value="passenger">Passenger</ion-select-option>
+             <ion-select-option value="driver">Driver</ion-select-option>
+      </ion-select>
+
+      <ion-item lines="none">
+        <ion-input #phone1 type="text" class="mt-1 form-control text-center my-1 mx-auto d-block" placeholder="+0000000000">
+
+        </ion-input>
+      </ion-item>
+      <div class="text-center text-danger">{{err.phone1_err}}</div>
+
+      <ion-item class="mx-auto" lines="none" style="background-color:azure;">
+        <ion-button class="mx-auto" size="default" (click)="send_code(phone1.value,selector.value)">Send Code</ion-button>
+      </ion-item>
+
+      <a [routerLink]="undefined" class="text-info h6 float-left" (click)="prev()">
+        <ion-icon name="arrow-back-outline" style="margin-left: 6px;height:24px;width: 35px;"></ion-icon>
+      </a>
+
+    </ion-slide>
+    <!--slide 3-->
+    <ion-slide>
+      <div class="mt-2">
+        <input #code type="number" maxlength="6" class="mt-1 form-control text-center my-1 mx-auto d-block"
+          placeholder="Write Code here">
+        <ion-item class="mx-auto" lines="none" style="background-color:azure;">
+          <ion-button class="mx-auto" size="default" (click)="verify_code(code.value)">Verify Code</ion-button>
+        </ion-item>
+
+        <a [routerLink]="undefined" class="text-info h6 float-left" (click)="prev()">
+          Wrong number?
+        </a>
+      </div>
+    </ion-slide>
+    <!--slide 4-->
+    <ion-slide class="d-block">
+      <ion-item lines="none">
+        <ion-input #pass1 type="password" class="mt-1 form-control text-center mt-1 mx-auto d-block"
+          placeholder="New Password"></ion-input>
+      </ion-item>
+      <div class="text-center text-danger">{{err.empty}}</div>
+      <ion-item lines="none">
+        <ion-input #pass2 type="password" class="mt-1 form-control text-center mt-1 mx-auto d-block"
+          placeholder="Confirm Password"></ion-input>
+      </ion-item>
+      <div class="text-center text-danger">{{err.match}}</div>
+      <ion-item class="mx-auto" lines="none" style="background-color:azure;">
+        <ion-button class="mx-auto" size="default" (click)="resetPass(pass1.value,pass2.value,'empty','match')">Verify Code</ion-button>
+      </ion-item>
+    </ion-slide>
+    <!--slide 5-->
+    <ion-slide class="d-block">
+      <ion-item lines="none">
+        <ion-icon color="success" name="checkmark-done-circle-outline" size="large"></ion-icon>
+        <span class="font-weight-bold font-italic">Please Wait</span>
+        <ion-spinner name="dots" size="large"></ion-spinner>
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

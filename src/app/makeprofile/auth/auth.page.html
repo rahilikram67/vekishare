@@ -1,0 +1,54 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+
+
+
+
+  <div class="h1 shadow fixed-top d-md-block d-none" style="height: 35%;">
+    <div class="ml-5 mt-5"> One more step to continue</div>
+    <div class="lead text-secondary mt-2" style="margin-left: 5%;">please clear the security check</div>
+  </div>
+
+  <div class="h3 ml-2 mt-4 d-block d-md-none font-weight-bold ">
+    Please clear security check
+  </div>
+
+  <div style="margin-top:25%"></div>
+
+  <div class="row">
+    <div class="ml-md-5 col-lg-4 offset-lg-1 offset-0 col-12">
+      <!---->
+      <ion-item class="mx-auto" style="border:2.5px solid blue;border-radius: 10px;width:320px">
+        <ion-label position="stacked" color="primary">Profile Photo (Optional)</ion-label>
+        <ion-input input type="file" (change)="uploadfile($event)"></ion-input>
+      </ion-item>
+      <!---->
+      <ion-item lines="none">
+        <ion-spinner name="dots" [hidden]="spinner" style="height: 5rem;"></ion-spinner>
+      </ion-item>
+      <div id="recaptcha" class="ml-md-5" [hidden]="hide_recap"></div>
+      <div [hidden]="!hide_recap">
+        <ion-input type="number" #code class="form-control w-75 mx-auto mt-2" maxlength="6" placeholder="Write Code">
+        </ion-input>
+        <ion-item lines="none">
+
+          <ion-button class="mx-auto" size="large" fill="solid" expand="block" (click)="submit(code.value)">
+            Verify</ion-button>
+        </ion-item>
+        <ion-progress-bar class="border col-10 mx-auto mt-1" [value]="progress" [hidden]="hide_progress_bar"
+          style="height:15px;border-radius: 20px;" [buffer]="buffer">
+        </ion-progress-bar>
+      </div>
+    </div>
+
+    <div class="col-lg-4 offset-lg-1 mx-auto d-none d-lg-block" style="margin-top: -12%;">
+      <ion-img src="assets/warning.png" class="h-75" style="margin-top: 5%"></ion-img>
+    </div>
+  </div>
+
+
+
+</ion-content>

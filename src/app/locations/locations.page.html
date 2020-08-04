@@ -1,0 +1,72 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content id="for-modal">
+  <ion-item lines="none">
+    <ion-buttons slot="start" class="d-lg-none">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="mx-auto mt-1">
+      <img src="/assets/VekiShare.png" class="img img-fluid" alt="" />
+
+    </div>
+    <ion-icon name="none" slot="end" class="d-lg-none"></ion-icon>
+  </ion-item>
+  <ion-icon name="none"></ion-icon>
+  <div class="container" align="center">
+
+    <h2 style="border-radius:70px;"
+      class="border my-0 border-primary col-md-3  col-8 mx-auto bg-primary text-white text-center">
+      {{id.toUpperCase()}}
+    </h2>
+    <ion-item class="mt-3 mr-auto" lines="none">
+      <ion-buttons [slot]="slot">
+        <ion-button mode="ios" fill="solid" expand="block" size="large" color="primary" (click)="presentModal()">
+          <span style="font-size: 120%;">What TODO</span>
+        </ion-button>
+        <ion-segment mode="ios" #segment value="origin" (ionChange)="segmentChanged(segment.value)">
+          <ion-segment-button value="origin">
+            <ion-label>Starts</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="dest">
+            <ion-label>Ends</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-buttons>
+    </ion-item>
+  </div>
+
+  <ion-skeleton-text animated class="mx-auto h-50 col-md-6 col-12  border rounded" [hidden]="!hide_map">
+
+  </ion-skeleton-text>
+
+  <div [hidden]="hide_map" id="map" class="mx-auto h-50 col-md-6 col-12  border rounded"></div>
+
+
+
+  <div class="col-md-6 mx-auto mt-2">
+    <ion-card [hidden]="!show_detail" style="margin: 0;">
+      
+      <ion-item class="h5 font-italic" color="tertiary" [routerLink]="" (click)="animate()">
+        Detail
+        <ion-icon slot="end" name="caret-down" id="icon" class="border" style="border-color: white;border-radius:50%;">
+        </ion-icon>
+      </ion-item>
+      
+      <ion-card-content class="text-center position-static pb-1 mt-0 " id="content"
+        *ngIf="person!=undefined">
+
+        <table class="table table-striped bg-primary text-light" style="border-radius: 15px !important;">
+          <tr scope="row" *ngFor="let p of array">
+            <td class="h5">
+              {{p.charAt(0).toUpperCase()+p.slice(1)}}
+            </td>
+            <td class="font-weight-bold">{{person[p]}}</td>
+          </tr>
+        </table>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

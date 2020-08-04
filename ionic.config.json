@@ -1,0 +1,7 @@
+{
+  "name": "vekishare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,11 @@
+<ion-header>
+</ion-header>
+
+<ion-content color="medium">
+     <ion-item color="dark" [routerLink]="this.nav.get('p1').link" (click)="dismiss()">
+          <ion-label>{{this.nav.get('p1').text}}</ion-label>
+     </ion-item>
+     <ion-item color="dark" [routerLink]="this.nav.get('p2').link" (click)="dismiss()">
+          <ion-label>{{this.nav.get('p2').text}}</ion-label>
+     </ion-item>
+</ion-content>

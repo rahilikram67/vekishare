@@ -1,0 +1,137 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-buttons slot="start" class="d-md-none">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="mx-auto mt-1">
+      <img src="/assets/VekiShare.png" class="img img-fluid" alt="" />
+    </div>
+    <ion-icon name="none" slot="end" class="d-md-none"></ion-icon>
+  </ion-item>
+
+  <ion-toolbar class="text-center pt-2">
+    <ion-title class="mx-auto  bg-primary text-light h1 col-md-4 col-md-2 col-sm-5 col-9 rounded font-italic">{{header}}
+    </ion-title>
+  </ion-toolbar>
+  <div class="col col-12 col-md-8 mx-auto mt-1">
+    <p class="h3 bg-primary text-light text-center rounded">Enter Personal Info</p>
+
+    <div class="mx-auto">
+
+      <div class="border  rounded-md shadow-md pt-md-4">
+        <div class="col-md-6 border mx-auto my-md-2 rounded shadow pb-4">
+          <ion-item class="mx-auto">
+            <ion-label position="floating" color="primary">Name</ion-label>
+            <ion-input #name></ion-input>
+          </ion-item>
+          <ion-item class="mx-auto">
+            <ion-label position="floating" color="primary">Address</ion-label>
+            <ion-input #address></ion-input>
+          </ion-item>
+          <ion-item class="mx-auto">
+            <ion-label position="floating" color="primary">Phone Number</ion-label>
+            <ion-input #phone maxlength="14" placeholder="+0000000000000"></ion-input>
+          </ion-item>
+
+
+
+
+
+          <ion-item class="mx-auto">
+            <ion-label position="floating" color="primary">CNIC</ion-label>
+            <ion-input [(ngModel)]="todo.cnic" (ngModelChange)="todo.cnic=validateCnic($event)" id="cnic" minlength="15"
+              maxlength="15">
+            </ion-input>
+          </ion-item>
+
+          <ion-item class="mx-auto">
+            <ion-label position="floating" color="primary">Password</ion-label>
+            <ion-input type="password" #first_pass></ion-input>
+          </ion-item>
+
+          <ion-item class="mx-auto">
+            <ion-label position="floating" color="primary">Confirm Password</ion-label>
+            <ion-input type="password" [(ngModel)]="todo.last_pass"
+              (ngModelChange)="validate_pass(first_pass.value,$event)" id="last_pass"></ion-input>
+          </ion-item>
+
+          <ion-text class="text-danger d-block">{{password_text}}</ion-text>
+        </div>
+        <!--
+            here the the personal info block ends
+          -->
+        <div class="mx-auto col-md-4 text-center bg-primary rounded shadow-md">
+          <ion-text class="h3   text-light">Map Options</ion-text>
+        </div>
+
+
+
+        <div class="col-md-6 border mx-auto my-2 rounded shadow-md pb-2" style="background-color: white;">
+          <ion-item class="mx-auto bg-transparent pt-2" lines="none">
+            <input #start id="start" class="text-center form-control" placeholder="Start">
+          </ion-item>
+
+          <ion-item class="mx-auto bg-transparent" lines="none">
+            <input #end id="end" class="text-center form-control" placeholder="End">
+          </ion-item>
+
+          <ion-item class="mx-auto" lines="none">
+            <ion-button rounded outline solid color="primary" class="col-md-8 text-wrap col-12 h-75 mx-auto"
+              (click)="showMap(start.value,end.value)">Show Map</ion-button>
+          </ion-item>
+        </div>
+        <!--
+            here the maps block ends
+          -->
+        <p class="text-center mx-auto  text-info rounded text-wrap " style="background-color: white;">{{click_dest_map}}
+        </p>
+        <ion-item class="col-md-6 rounded mx-auto" style="background-color: #3880ff;" *ngIf="click_dest_map"
+          color="primary">
+          <ion-label>
+            Change :
+          </ion-label>
+          <ion-select interface="alert" [(ngModel)]="todo.choice" placeholder="Empty">
+            <ion-select-option value="origin">Start</ion-select-option>
+            <ion-select-option value="dest">End</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="col-md-6 rounded mx-auto" style="background-color: #3880ff;" *ngIf="click_dest_map"
+          color="primary">
+          <ion-label>
+            Mode :
+          </ion-label>
+
+          <ion-select interface="alert" [(ngModel)]="todo.map_mode" (ngModelChange)="showMap(start.value,end.value)">
+            <ion-select-option value="DRIVING">Driving</ion-select-option>
+            <ion-select-option value="WALKING">Walking</ion-select-option>
+
+          </ion-select>
+
+        </ion-item>
+
+        <div id="map" [hidden]="hide_map" style="height: 15rem"
+          class="col-md-6  mx-auto border border-primary  rounded my-2 shadow-md">
+        </div>
+
+
+
+        <div class="col-md-12 pb-2" align="center">
+          <button class="btn btn-outline-success col-md-4 mx-auto  shadow-md mt-2 pt-2"
+            (click)="submit(name.value,address.value,phone.value)"><span class="h4">Submit
+              Document</span></button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</ion-content>

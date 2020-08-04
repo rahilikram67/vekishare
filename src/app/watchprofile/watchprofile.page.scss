@@ -1,0 +1,65 @@
+//small
+@media (min-width:320px) and (max-width:460px)
+{
+    .container{
+        width: 100%;
+    }
+    .search{
+        margin-left: 0%;
+        margin-top:5rem !important;
+    }
+    
+}
+//medium
+@media (min-width:461px) and (max-width:700px)
+{
+    .container{
+        width: 100%;
+    }
+    
+    .search{
+        margin-left: 0%;
+        margin-top:5rem !important;
+    }
+    
+}
+//large
+@media (min-width:701px) and (max-width:992px)
+{
+    .container{
+        width: 80%;
+    }
+    
+    .search{
+        margin-left: 0%;
+        margin-top:5rem !important;
+    }
+    
+}
+//extra large
+@media (min-width:993px) and (max-width:1400px)
+{
+    .list-group{
+      margin-right: 19%;
+    }
+    .container{
+        width: 50%;
+    }
+    
+    .search{
+        margin-left: 20%;
+        margin-top:8% !important;
+    }
+}
+
+ion-spinner{
+    width:2.5rem;
+    height:2.5rem
+}
+.avatar{
+    height: 60px;
+    width: 60px;
+}
+ion-item[color="white"]:hover{
+    background-color: lightgray;
+}

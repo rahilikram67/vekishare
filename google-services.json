@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "744563302782",
+    "firebase_url": "https://vekishare.firebaseio.com",
+    "project_id": "vekishare",
+    "storage_bucket": "vekishare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744563302782:android:36ec593424c8d82e28d32f",
+        "android_client_info": {
+          "package_name": "veki.vekishare.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744563302782-dk6i8akfec2gjfdlm3iqtgjq2nfj3dj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc_Vqk-WmSFjRL7R_CknuviGf0pZKzQl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744563302782-dk6i8akfec2gjfdlm3iqtgjq2nfj3dj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

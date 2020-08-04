@@ -1,0 +1,83 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-buttons slot="start" class="d-lg-none">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="mx-auto mt-1">
+        <img src="/assets/VekiShare.png" class="img img-fluid" alt="" />
+    </div>
+    <ion-icon name="none" slot="end" class="d-lg-none"></ion-icon>
+  </ion-item>
+  
+    
+  
+
+  <ion-toolbar class="d-none d-lg-block" color="dark">
+    <ion-row>
+      <ion-col *ngFor="let p of pc_menu" [size]="p.size" [offset]="p.offset">
+        <ion-item  class="w-50 h5 font-italic d-inline" (click)="presentPopover($event,p.number)" color="dark" 
+        class="border border-dark " style="border-radius: 50px;"
+          lines="none" routerLink="">
+          <ion-label style="font-size: 20px; " class="text-center">{{p.title}}</ion-label>
+          <ion-icon name="caret-down-sharp" color="light"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+
+  <div align="center" class="container-sm  my-3">
+
+    <div class="h3 text-wrap bg-primary">
+      VekiShare – STATEMENT OF UOKIK’S POSITION
+    </div>
+
+
+    <div class="text-justify bg-light">
+      <h5>In the context of the on-going public debate on the benefits but also potential threats to competition and
+        consumers posed by online platforms on the passenger services market, UOKiK would like to present the following.
+      </h5>
+
+      <h6 class="my-4">Like other competition and consumer protection authorities around the world, UOKiK is closely
+        monitoring and
+        analysing the effects of the emergence on the market of online platforms including those facilitating contact
+        between drivers and passengers, such as VekiShare.</h6>
+
+      <h6 class="my-2"> UOKiK's view is that the monitoring carried out so far does not give reasons for opening
+        proceedings in this case
+        with regard to protection of consumer interests or competition.
+      </h6>
+
+      <div align="center">
+        <img class="col-lg-6 letter" src="assets/googlemaps.jpg" />
+      </div>
+
+      <h6 class="my-3">Established in 2009, VekiShare is the creator of a mobile application used to order vehicle
+        transport services by
+        connecting passengers with drivers that provide transportation services. The firm operates worldwide and has a
+        presence in many cities and countries. In Poland, VekiShare services are available in Warsaw (since August
+        2014), in
+        Cracow (since April 2015), Gdansk, Gdynia and Sopot region (since June 2015), Poznan (since November 2015) and
+        Wrocław (since November 2015). As of February 2016, drivers cooperating with VekiShare have been required to
+        show proof
+        that they have registered as businesses.</h6>
+
+      <h4 class="my-5-top">The nature of the service</h4>
+      <h6>VekiShare differs from other similar applications on the market primarily due to the fact that it is not
+        connected to a
+        taxi service. Other applications offer transportation services provided by a specific number of taxi firms at
+        the
+        prices set by those firms. Also, VekiShare allow drivers, who want to work make profiles online, stay in contact
+        and provide services to clients. The fare range depends upon driver but is based on the actual distance
+        travelled and the
+        time of the journey, clients measure distance using GPS receivers in mobile devices. There is no automatic</h6>
+    </div>
+
+  </div>
+
+  
+</ion-content>
